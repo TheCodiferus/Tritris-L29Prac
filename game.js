@@ -64,9 +64,9 @@ class Game {
         this.spawnPiece(); //Make next piece current, and pick new next
 
         this.levelSpeeds = {
-            0: 48,
-            1: 43, //From https://tetris.wiki/Tetris_(NES,_Nintendo)
-            2: 38,
+            0: 2,
+            1: 1, //Yeehaw!
+            2: 38, //From https://tetris.wiki/Tetris_(NES,_Nintendo)
             3: 33,
             4: 28,
             5: 23,
@@ -668,6 +668,13 @@ class Game {
 
         if (this.practice) {
             stroke(255,0,0);
+            strokeWeight(4);
+            noFill();
+            rect(x, y, w, h);
+        }
+        
+        if (!this.practice) {
+            stroke(200,85,200);
             strokeWeight(4);
             noFill();
             rect(x, y, w, h);
